@@ -35,5 +35,6 @@ class main:
     vertices = [Point(1,1), Point(0,0), Point(0,1)]
     polygon = Polygon(vertices)
     polygon.move(Vector(Point(0,0),Point(1,1)))
+    
     print(polygon.centroid().x)
     print(polygon.centroid().y)
