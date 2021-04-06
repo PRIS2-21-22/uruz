@@ -11,8 +11,8 @@ class Polygon:
         moved_vertices = copy.deepcopy(self.vertices)
         
         for vertex in moved_vertices:
-            vertex.x_coord += vector.XComp()
-            vertex.y_coord += vector.YComp()
+            vertex.x_coord += vector.x_comp()
+            vertex.y_coord += vector.y_comp()
 
         return Polygon(moved_vertices)
 
