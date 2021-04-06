@@ -1,5 +1,6 @@
 from Point import Point
 from Vector import Vector
+import copy
 
 class Polygon:
 
@@ -7,9 +8,13 @@ class Polygon:
         self.vertices = vertices
 
     def move(self, vector):
-        for vertex in self.vertices:
+        moved_vertices = copy.deepcopy(self.vertices)
+        
+        for vertex in moved_vertices:
             vertex.x_coord += vector.XComp()
             vertex.y_coord += vector.YComp()
+
+        return Polygon(moved_vertices)
 
     def centroid(self):
         n = len(self.vertices)
