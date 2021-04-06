@@ -8,25 +8,25 @@ class Polygon:
 
     def move(self, vector):
         for vertex in self.vertices:
-            vertex.x += vector.X()
-            vertex.y += vector.Y()
+            vertex.x_coord += vector.XComp()
+            vertex.y_coord += vector.YComp()
 
     def centroid(self):
         n = len(self.vertices)
         
         a = 0
         for i in range(n):
-            a += self.vertices[i].x*self.vertices[(i+1)%n].y-self.vertices[(i+1)%n].x*self.vertices[i].y
+            a += self.vertices[i].x_coord*self.vertices[(i+1)%n].y_coord-self.vertices[(i+1)%n].x_coord*self.vertices[i].y_coord
         a /= 2
 
         x = 0
         for i in range(n):
-            x += (self.vertices[(i+1)%n].x+self.vertices[i].x)*(self.vertices[i].x*self.vertices[(i+1)%n].y-self.vertices[(i+1)%n].x*self.vertices[i].y)
+            x += (self.vertices[(i+1)%n].x_coord+self.vertices[i].x_coord)*(self.vertices[i].x_coord*self.vertices[(i+1)%n].y_coord-self.vertices[(i+1)%n].x_coord*self.vertices[i].y_coord)
         x /= 6*a
 
         y = 0
         for i in range(n):
-            y += (self.vertices[(i+1)%n].y+self.vertices[i].y)*(self.vertices[i].x*self.vertices[(i+1)%n].y-self.vertices[(i+1)%n].x*self.vertices[i].y)
+            y += (self.vertices[(i+1)%n].y_coord+self.vertices[i].y_coord)*(self.vertices[i].x_coord*self.vertices[(i+1)%n].y_coord-self.vertices[(i+1)%n].x_coord*self.vertices[i].y_coord)
         y /= 6*a
       
         return Point(x, y)
@@ -36,5 +36,5 @@ class main:
     polygon = Polygon(vertices)
     polygon.move(Vector(Point(0,0),Point(1,1)))
     
-    print(polygon.centroid().x)
-    print(polygon.centroid().y)
+    print(polygon.centroid().x_coord)
+    print(polygon.centroid().y_coord)

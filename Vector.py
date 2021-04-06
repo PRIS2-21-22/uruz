@@ -6,11 +6,11 @@ class Vector:
         self.p1 = p1
         self.p2 = p2
 
-    def X(self):
-        return self.p2.x - self.p1.x
+    def XComp(self):
+        return self.p2.x_coord - self.p1.x_coord
 
-    def Y(self):
-        return self.p2.y - self.p1.y
+    def YComp(self):
+        return self.p2.y_coord - self.p1.y_coord
 
     def crossProduct(self, vector):
-        return self.X() * vector.Y() - vector.X() * self.Y()
+        return self.XComp() * vector.YComp() - vector.XComp() * self.YComp()
