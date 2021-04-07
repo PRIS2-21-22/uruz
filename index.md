@@ -34,3 +34,6 @@ In the example image, I have created a new issue in my partner repository for an
 
 ## Code refactoring
 
+![](https://i.imgur.com/7hlyKu3.png)
+
+After our partner has finished reviewing the code in our repository, it is time to fix all of the issues pointed out one by one. In some cases, some of the issues may need further discussion with our workmate to clarify where the problem is located. Prior to and after refactoring, we can make use of GitHub tool for tracking releases to tag each version and keep track of all of the changes made in an easier way.
