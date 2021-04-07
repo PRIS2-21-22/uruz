@@ -1,4 +1,4 @@
-# uruz
+# Implementation, code review and refactoring of an ADT project
 
 ## Material and methods
 
