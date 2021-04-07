@@ -1,4 +1,4 @@
-# Implementation, code review and refactoring of an ADT project
+# Lab 3: Do and monitor an ADT Project
 
 ## Material and methods
 
