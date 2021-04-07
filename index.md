@@ -8,50 +8,29 @@ For this lab session, we will implement in Python the assigned ADT (Polygon in t
 
 ### SonarCloud
 
-![](https://i.imgur.com/vQE8lAr.png)
+![](https://i.imgur.com/pjykSpb.png)
 
-If we take a look to the general overview of the individual project #1 (Polygon), we do not observe any alarming issues with our code. We can note, however, that 2 classes (Punto and Vector) are lacking any comments which could hinder future.
+SonarCloud allow us to keep track of bugs and code smells in our partner repository. In the image, we can see three of these code smells related to the naming convention of methods in Python. It is possible comment on them, alter their priority, assign someone to the task and even confirm them or flag as false positive.
 
-We can also notice the high number of branches in the class Poligono, but that is due to it being the core of the project and the longest file with 68 lines. With a 7.4% of comment lines we can tell that such complexity is well documented.
+![](https://i.imgur.com/QqOURO5.png)
 
-The last issue that we can find is the big amount of statements per method in the class UsoPoligono, in fact it is composed of just one method with 37 statements.
-
-![](https://i.imgur.com/17KHELr.png)
-
-If we take a deeper look, however, we can see this is indeed the main class of our project and it is composed of up to 24 different calls to other methods. Still, it is likely that the number of calls could be reduced or that it could be broken down into smaller sub-methods.
+If we take a look at the main overview, we can see a general review of the issues with the project, as well as an estimate on the time required to fix them. From this overview it is also possible to create several milestones in our project to keep track of the progress in the quality of its code.
 
 ### Codacy
 
-![](https://i.imgur.com/TvdIKnR.png)
+![](https://i.imgur.com/TOCXtKB.png)
 
-If we take a look at the Kiviat graph for our project, we can easily see the general strength and weaknesses of the project. We can see that the average complexity is low, which is generally a good sign, however the average depth is as high as 1.69 which means most lines in our code are at least at one level of depth and some of them at two levels. This could be a sign that refactorization could help simplify the code. The rest of the parameters are pretty normal, worth noting that we only have 4.38 statements on average per method but that's likely due to the code not being overly complex.
+In Codacy, the second code review platform that we will use for this lab, we can also easily keep track of several issues with the code. It will scan the project every time a commit is made and automatically report on the quality of the updated code and issues introduced.
+
+In the image, we can see the issues view. This section displays an overview of the issues present at the latest version of the code. From here, it is even possible to export them to GitHub issues as the corresponding repository.
 
 ### GitHub issues
 
-## Versioned project
+![](https://i.imgur.com/PGb1e5s.png)
 
-### General overview
+Beside this automated tools, it is also possible to manually point at bugs, enhancements or other suggestions on the project by creating a new issue on the corresponding repository.
 
-![](https://i.imgur.com/Tz8EsV7.png)
+In the example image, I have created a new issue in my partner repository for an enhancement he could introduce before refactoring. As it is shown, you can add tags, links, reference commits, other issues and assign members to it. After adding the enhancement, the issue was closed by my partner.
 
-Once we manually add into SourceMonitor the 4 different versions or checkpoints that make up our versioned project, we can get an overview of each of the iterations. In this general overview we can see how our metrics don't vary wildly from one version to the next one.
+## Code refactoring
 
-![](https://i.imgur.com/BSmQgbU.png)
-
-It is worth noting, however, how the average statements per method is constantly reduced, while the methods per class steadily increase. This is generally a good sign that proper refactorization is being made as bigger methods are being broken down into more manageable ones. We can see how the average depth and complexity also decrease as a sign of this.
-
-![](https://i.imgur.com/YLygrNi.png)
-
-However, we also need to realize that the last version removed a lot of documentation and commment lines from the code. The number of lines is almost static across all versions but the percentage of comments dropped to 4.0% to 1.6% in the last iteration. This could be a sign that some unneeded commentaries were removed after the refactorization, but still only 1 line of comments per 100 lines of code is a low percentage.
-
-### Kiviat Graph
-
-![](https://i.imgur.com/FRbz0L1.png)
-
-Next we will take a look at the Kiviat graph, in this case for the last iteration of the project (note that there is a bug with SourceMonitor and we had to select the first baseline to get the metrics that actually correspond to the last version).
-
-In this case we can see at a glance how the number of comment lines is really low in this final version. On the other hand, each method is kept really concise with a low number of statements per method and the average complexity is reduced, although the maximum complexity and depth could signal that some further refactoring could be attempted on some of the denser methods.
-
-## Review
-
-To sum up, SourceMonitors offers a pretty simple way to visualize some of the simpler metrics of code that can measure the quality of it. However, it is quite a limited tool as it doesn't even allow projects with code in different languages. It also had some notable bugs when working with several checkpoints so it may be best suited for small projects.
